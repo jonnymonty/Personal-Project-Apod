@@ -1,0 +1,79 @@
+﻿<Window x:Class="Apod.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Apod"
+        mc:Ignorable="d"
+        Title="Astronomy Picture of the Day" Height="565" Width="700"
+        ResizeMode="CanMinimize"
+        Initialized="MainWindow_OnInitialized"
+        WindowStartupLocation="CenterScreen"
+        Icon="Images/moon.ico">
+    <Grid>
+        <Image Source="Images/SpaceBG.jpg"
+               HorizontalAlignment="Center"
+               Stretch="UniformToFill"
+               />
+        <StackPanel Margin="15 15 15 0">
+            <Grid Margin="0 0 0 5">
+                <TextBlock x:Name="ImageName"
+                           Text="{Binding Context.Title}"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           TextWrapping="Wrap"
+                           FontSize="22" />
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <DatePicker x:Name="DatePicker"
+                                Padding="0 6 0 0"
+                                BorderThickness="0"
+                                Height="30" 
+                                Width="115"
+                                Margin="0" CalendarClosed="DatePicker_CalendarClosed" />
+
+                </StackPanel>
+            </Grid>
+
+            <Image x:Name="ApodImage"
+                   Source="{Binding Context.ImageSource}"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Height="400"
+                   Margin="0"
+                   Stretch="UniformToFill"
+            />
+
+        </StackPanel>
+        <StackPanel Margin="15 0 15 15" 
+                    VerticalAlignment="Bottom" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Left">
+
+            <Button x:Name="SaveButton"
+                    Content="Save"
+                    Margin="0 0 15 0"
+                    Padding="2"
+                    FontSize="{StaticResource FontSizeRegular}"
+                    Width="75"
+                    Height="30" Click="SaveImageAsync" />
+
+            <Button x:Name="SetBackground"
+                    Content="Set Background"
+                    Padding="2"
+                    FontSize="{StaticResource FontSizeRegular}"
+                    IsEnabled="False"
+                    Margin="0 0 15 0"
+                    Width="115"
+                    Height="30" Click="SetBackgroundAsync" />
+
+            <TextBlock x:Name="Status" 
+                       Text="{Binding Context.Status}"
+                       Foreground="White"
+                       FontSize="15"
+                       TextWrapping="Wrap" 
+                       VerticalAlignment="Center" />
+        </StackPanel>
+    </Grid>
+</Window>
