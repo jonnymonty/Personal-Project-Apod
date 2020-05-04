@@ -1,6 +1,6 @@
 ## Astronomy Picture of the Day (APOD)
 
-This is a C# WPF application that gets [Nasa's Daily Astronomy Picture](https://apod.nasa.gov/apod/) and displays it for you. You have the option to change the date to see previous pictures of the day. Some cool features that my app offers is the ability to save the image to your computer and also set it as your desktop background (setting background is only tested in windows 10).
+This is a C# WPF application that gets [Nasa's Daily Astronomy Picture](https://apod.nasa.gov/apod/) and displays it for you. You have the option to change the date to see previous pictures of the day. The app offers the ability to save the image to your computer as well as the ability to set it as your desktop background with a click of a button (setting background is only tested in windows 10).
 
 ## Project Status
 The project is currently working and can be tested by following the installation and setup instructions below.
